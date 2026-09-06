@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HAPPY BIRTHDAY MY LOVE❤️</title>
+
+<style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    background: #c5c0b6;
+
+    color: #26221e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* =====================================================
+   PAPER TEXTURE
+===================================================== */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    opacity: 0.08;
+
+    background-image:
+        url(".jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    mix-blend-mode: multiply;
+}
+
+
+/* =====================================================
+   1. PASSCODE PAGE
+   BACKGROUND: bg.jpg
+===================================================== */
+
+#lockPage {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-image:
+        url("bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    transition:
+        transform 1.7s cubic-bezier(.7,0,.2,1),
+        opacity 1.7s;
+}
+
+
+/* =====================================================
+   PASSCODE CARD
+===================================================== */
+
+.lock-card {
+
+    position: relative;
+
+    width: 380px;
+
+    max-width: 90%;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: #c5c0b6;
+
+    border:
+        2px solid #25211d;
+
+    box-shadow:
+        10px 10px 0 #25211d;
+
+    transform: rotate(-1deg);
+}
+
+
+/* =====================================================
+   SPIDER-MAN
+===================================================== */
+
+.lock-spiderman {
+
+    width: 130px;
+
+    display: block;
+
+    margin: -100px auto 20px auto;
+
+    animation:
+        floatSpider 3s ease-in-out infinite;
+}
+
+
+@keyframes floatSpider {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px)
+            rotate(3deg);
+    }
+}
+
+
+/* =====================================================
+   LOCK TITLE
+===================================================== */
+
+.lock-card h1 {
+
+    margin: 0;
+
+    color: #b52828;
+
+    font-size: 26px;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        2px 2px 0 #222;
+}
+
+
+.lock-card h2 {
+
+    margin-top: 8px;
+
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    font-weight: normal;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.lock-card p {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #62584c;
+}
+
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+#password {
+
+    width: 220px;
+
+    padding: 14px;
+
+    margin-top: 15px;
+
+    border:
+        3px solid #25211d;
+
+    background: #fff9ed;
+
+    outline: none;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    letter-spacing: 10px;
+
+    color: #222;
+}
+
+
+#password:focus {
+
+    border-color: #b52828;
+
+    box-shadow:
+        5px 5px 0 #315c86;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+#error {
+
+    color: #b52828;
+
+    font-size: 12px;
+
+    margin-top: 15px;
+
+    height: 15px;
+
+    opacity: 0;
+}
+
+
+#error.show {
+
+    opacity: 1;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+#unlockButton {
+
+    display: block;
+
+    margin: 20px auto 0;
+
+    padding: 13px 38px;
+
+    border:
+        3px solid #25211d;
+
+    background: #b52828;
+
+    color: white;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        5px 5px 0 #25211d;
+
+    transition: 0.2s;
+}
+
+
+#unlockButton:hover {
+
+    background: #315c86;
+
+    transform:
+        translate(3px,3px);
+
+    box-shadow:
+        2px 2px 0 #25211d;
+}
+
+
+/* =====================================================
+   VIDEO TRANSITION
+===================================================== */
+
+#videoTransition {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    background: #000;
+
+    z-index: 2000;
+
+    display: none;
+
+    opacity: 0;
+}
+
+
+#videoTransition.active {
+
+    display: block;
+
+    opacity: 1;
+}
+
+
+/* =====================================================
+   PAGE PULL
+===================================================== */
+
+#lockPage.leave {
+
+    transform:
+        translateX(-120%)
+        rotate(-8deg);
+
+    opacity: 0;
+}
+
+
+/* =====================================================
+   MAIN WEBSITE
+===================================================== */
+
+#mainSite {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    display: none;
+
+    opacity: 0;
+}
+
+
+#mainSite.show {
+
+    display: block;
+
+    animation:
+        siteAppear 1s ease forwards;
+}
+
+
+@keyframes siteAppear {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =====================================================
+   2. OPTIONS PAGE
+   BACKGROUND: bg2.jpg
+===================================================== */
+
+#optionsHome {
+
+    min-height: 100vh;
+
+    padding: 100px 8%;
+
+    text-align: center;
+
+    background-image:
+        url("bg2.jfif");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+/* =====================================================
+   OPTIONS TITLE
+===================================================== */
+
+.options-title {
+
+    max-width: 750px;
+
+    margin: 0 auto 60px;
+}
+
+
+.options-title h1 {
+
+    margin: 0;
+
+    color: #b52828;
+
+    font-size:
+        clamp(40px, 7vw, 75px);
+
+    line-height: 0.95;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        4px 4px 0 #222;
+}
+
+
+.options-title p {
+
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    margin-top: 25px;
+
+    color: #b52828;
+}
+
+
+/* =====================================================
+   OPTION PICTURES
+===================================================== */
+
+.option-pictures {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(220px,1fr));
+
+    gap: 45px;
+}
+
+
+/* =====================================================
+   OPTION CARDS
+===================================================== */
+
+.option-picture {
+
+    position: relative;
+
+    background: #fcfcfb;
+
+    padding:
+        12px 12px 55px;
+
+    border:
+        3px solid #25211d;
+
+    box-shadow:
+        4px 6px 15px
+        rgba(0,0,0,.25);
+
+    cursor: pointer;
+
+    text-align: center;
+
+    transition: 0.4s;
+
+    font-family:
+        Cambria,
+        Cochin,
+        Georgia,
+        Times,
+        "Times New Roman",
+        serif;
+
+    color: #26221e;
+}
+
+
+.option-picture:nth-child(1) {
+
+    transform:
+        rotate(-5deg);
+}
+
+
+.option-picture:nth-child(2) {
+
+    transform:
+        rotate(4deg);
+}
+
+
+.option-picture:nth-child(3) {
+
+    transform:
+        rotate(-3deg);
+}
+
+
+.option-picture:nth-child(4) {
+
+    transform:
+        rotate(6deg);
+}
+
+
+.option-picture:hover {
+
+    transform:
+        rotate(0deg)
+        scale(1.06);
+
+    z-index: 10;
+}
+
+
+.option-picture img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #c5c0b6;
+}
+
+
+.option-picture h2 {
+
+    margin:
+        16px 0 0;
+
+    color: #b52828;
+
+    font-size: 25px;
+}
+
+
+.option-picture p {
+
+    margin:
+        8px 0 0;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   GENERAL OPTION PAGES
+===================================================== */
+
+.option-page {
+
+    display: none;
+
+    min-height: 100vh;
+
+    padding:
+        100px 8%;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+.option-page.active {
+
+    display: flex;
+}
+
+
+/* =====================================================
+   3. SONG PAGE
+   BACKGROUND: bg3.jpg
+===================================================== */
+
+#songPage {
+
+    background-image:
+        url("bg3.png");
+}
+
+
+/* =====================================================
+   4. US PAGE
+   BACKGROUND: bg4.jpg
+===================================================== */
+
+#videoPage {
+
+    background-image:
+        url("bg4.jfif");
+}
+
+
+/* =====================================================
+   5. LETTER PAGE
+   BACKGROUND: bg5.jpg
+===================================================== */
+
+#letterPage {
+
+    background-image:
+        url("bg5.jfif");
+}
+
+
+/* =====================================================
+   6. DAYS WE MET PAGE
+   BACKGROUND: bg6.jpg
+===================================================== */
+
+#customPage {
+
+    background-image:
+        url("bg6.png");
+}
+
+
+/* =====================================================
+   OPTION PAGE CARD
+===================================================== */
+
+.option-page-box {
+
+    width:
+        min(850px, 100%);
+
+    background: #c5c0b6;
+
+    padding: 55px;
+
+    border:
+        3px solid #222;
+
+    box-shadow:
+        8px 8px 0 #222;
+
+    transform:
+        rotate(1deg);
+
+    text-align: center;
+}
+
+
+.option-page-box h2 {
+
+    color: #b52828;
+
+    font-size: 42px;
+
+    text-shadow:
+        3px 3px 0 #222;
+}
+
+
+.option-page-box p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+.option-page-box audio,
+.option-page-box video {
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+
+/* =====================================================
+   SMALL SONG CARD
+===================================================== */
+
+#songPage .option-page-box {
+
+    width:
+        min(600px, 90%);
+
+    padding: 30px;
+}
+
+
+#songPage .option-page-box video {
+
+    max-height: 400px;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   VIDEO PAGE CARD
+===================================================== */
+
+#videoPage .option-page-box {
+
+    width:
+        min(850px, 95%);
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.option-back {
+
+    margin-top: 30px;
+
+    padding: 13px 35px;
+
+    border:
+        3px solid #25211d;
+
+    background: #b52828;
+
+    color: white;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    box-shadow:
+        5px 5px 0 #25211d;
+}
+
+
+.option-back:hover {
+
+    background: #315c86;
+
+    transform:
+        translate(3px,3px);
+
+    box-shadow:
+        2px 2px 0 #25211d;
+}
+
+
+/* =====================================================
+   LETTER
+===================================================== */
+
+#letterPage .option-page-box {
+
+    max-width: 750px;
+}
+
+/* =====================================================
+   MEMORY TEXT BOX IMAGE
+   Replace memory-box.jpg with your own box/paper image
+   ===================================================== */
+
+.memory-detail {
+
+    background-image:
+        url("memory-box.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    padding: 45px;
+
+    min-height: 300px;
+}
+
+/* =====================================================
+   LETTER IMAGE
+   Replace letter-paper.jpg with your own letter image
+   ===================================================== */
+
+.letter-paper {
+
+    width: 100%;
+
+    min-height: 700px;
+
+    padding: 100px 90px;
+
+    background-image:
+        url("letter-paper.jpg");
+
+    background-size: 100% 100%;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    text-align: left;
+
+    box-sizing: border-box;
+}
+
+.letter-paper p {
+
+    margin: 0 0 18px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+@media(max-width:700px) {
+
+    .memory-detail {
+
+        padding: 30px 25px;
+
+    }
+
+    .letter-paper {
+
+        min-height: 600px;
+
+        padding: 70px 35px;
+
+    }
+
+    .letter-paper p {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+    }
+
+}
+
+
+#letterPage .option-page-box h2 {
+
+    font-family:
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 35px;
+}
+
+
+/* =====================================================
+   MEMORY GRID
+===================================================== */
+
+.memory-grid {
+
+    margin:
+        35px auto 0;
+
+    max-width: 900px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(220px, 1fr));
+
+    gap: 35px;
+}
+
+
+/* =====================================================
+   MEMORY CARD
+===================================================== */
+
+.memory-card {
+
+    position: relative;
+
+    background: #c5c0b6;
+
+    padding:
+        12px 12px 22px;
+
+    border:
+        3px solid #25211d;
+
+    box-shadow:
+        6px 7px 0 #25211d;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    transition: .35s ease;
+
+    font-family:
+        "Comic Sans MS",
+        cursive;
+
+    color: #26221e;
+}
+
+
+.memory-card:nth-child(1) {
+
+    transform:
+        rotate(-3deg);
+}
+
+
+.memory-card:nth-child(2) {
+
+    transform:
+        rotate(3deg);
+}
+
+
+.memory-card:nth-child(3) {
+
+    transform:
+        rotate(2deg);
+}
+
+
+.memory-card:nth-child(4) {
+
+    transform:
+        rotate(-3deg);
+}
+
+
+.memory-card:hover {
+
+    transform:
+        rotate(0deg)
+        translateY(-6px)
+        scale(1.03);
+
+    z-index: 10;
+}
+
+
+.memory-card img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    display: block;
+
+    background: #c5c0b6;
+}
+
+
+.memory-card h3 {
+
+    margin:
+        14px 0 5px;
+
+    color: #b52828;
+
+    font-size: 23px;
+}
+
+
+.memory-card p {
+
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   MEMORY DETAIL
+===================================================== */
+
+.memory-detail {
+
+    display: none;
+
+    margin:
+        35px auto 0;
+
+    max-width: 760px;
+
+    padding: 25px;
+
+    background: #c5c0b6;
+
+    border:
+        3px solid #25211d;
+
+    box-shadow:
+        5px 5px 0 #25211d;
+
+    text-align: left;
+}
+
+
+.memory-detail.active {
+
+    display: block;
+
+    animation:
+        siteAppear .35s ease forwards;
+}
+
+
+.memory-detail h3 {
+
+    margin-top: 0;
+
+    color: #b52828;
+
+    font-size: 30px;
+}
+
+
+.memory-detail p {
+
+    line-height: 1.8;
+
+    font-size: 17px;
+}
+
+
+.memory-note {
+
+    margin-top:
+        28px !important;
+
+    font-size:
+        13px !important;
+
+    color:
+        #62584c;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+    #optionsHome,
+    .option-page {
+
+        min-height: 100vh;
+
+        height: auto;
+
+        overflow-y: visible;
+
+        background-attachment: scroll;
+    }
+
+
+    .option-pictures {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .memory-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(130px, 1fr));
+
+        gap: 14px;
+    }
+
+
+    .memory-card {
+
+        max-width: 420px;
+
+        width: 100%;
+
+        margin: auto;
+    }
+
+
+    .option-page-box {
+
+        padding: 30px;
+    }
+
+
+    #songPage .option-page-box {
+
+        width: 94%;
+
+        padding: 20px;
+    }
+
+
+    #songPage .option-page-box video {
+
+        max-height: 300px;
+    }
+
+
+    .lock-card {
+
+        margin-top: 50px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE BACKGROUND FIX
+===================================================== */
+
+@media(max-width:700px) {
+
+    #lockPage {
+
+        background-attachment: scroll;
+    }
+
+    #optionsHome {
+
+        background-image:
+            url("bg2.jfif");
+    }
+
+    #songPage {
+
+        background-image:
+            url("bg3.png");
+    }
+
+    #videoPage {
+
+        background-image:
+            url("bg4.jfif");
+    }
+
+    #letterPage {
+
+        background-image:
+            url("bg5.jfif");
+    }
+
+    #customPage {
+
+        background-image:
+            url("bg6.png");
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     PASSCODE PAGE
+     bg.jpg
+===================================================== -->
+
+<div id="lockPage">
+
+    <div class="lock-card">
+
+        <img
+            src="111.png"
+            class="lock-spiderman"
+            alt="Spider-Man"
+        >
+
+        <h1>
+            HAPPY BIRTHDAY MY GORGEOUSAURUS!
+        </h1>
+
+        <br>
+
+        <h2>
+            HERE IS A LITTLE THING FROM MY SIDE
+        </h2>
+
+        <p>
+            There's a small surprise for you.<br>
+            But you'll need a passcode to unlock it.
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            maxlength="4"
+            placeholder="••••"
+            inputmode="numeric"
+            autocomplete="off"
+        >
+
+        <div id="error">
+            Wrong passcode. Try again ❤️
+        </div>
+
+        <button id="unlockButton">
+            UNLOCK
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     VIDEO TRANSITION
+===================================================== -->
+
+<video
+    src="transition.mp4"
+    id="videoTransition"
+    playsinline
+    preload="auto"
+></video>
+
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<main id="mainSite">
+
+
+<!-- =====================================================
+     2. OPTIONS PAGE
+     bg2.jpg
+===================================================== -->
+
+<section
+    id="optionsHome"
+    class="options-page"
+>
+
+    <div class="options-title">
+
+        <h1>
+            THESE ARE LITTLE MEMORIES BETWEEN US
+        </h1>
+
+        <p>
+            Pick any of the thing to view it!!! ❤️
+        </p>
+
+    </div>
+
+
+    <div class="option-pictures">
+
+
+        <!-- SONG -->
+
+        <div
+            class="option-picture"
+            onclick="openOption('songPage')"
+        >
+
+            <img
+                src="song.jpg"
+                alt="Our Song"
+            >
+
+            <h2>
+                SONG FOR YOU
+            </h2>
+
+        </div>
+
+
+        <!-- VIDEO -->
+
+        <div
+            class="option-picture"
+            onclick="openOption('videoPage')"
+        >
+
+            <img
+                src="us.png"
+                alt="A Little Memory"
+            >
+
+            <h2>
+                US
+            </h2>
+
+        </div>
+
+
+        <!-- LETTER -->
+
+        <div
+            class="option-picture"
+            onclick="openOption('letterPage')"
+        >
+
+            <img
+                src="letter.jpg"
+                alt="A Letter"
+            >
+
+            <h2>
+                A LETTER
+            </h2>
+
+        </div>
+
+
+        <!-- DAYS WE MET -->
+
+        <div
+            class="option-picture"
+            onclick="openOption('customPage')"
+        >
+
+            <img
+                src="dwm.jpg"
+                alt="Days We Met"
+            >
+
+            <h2>
+                SWEET MEMORIES
+            </h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. SONG PAGE
+     bg3.jpg
+===================================================== -->
+
+<section
+    id="songPage"
+    class="option-page"
+>
+
+    <div class="option-page-box">
+
+        <h2>
+            SONG FOR YOU
+        </h2>
+
+        <p>
+            Songs which defines you ❤️
+        </p>
+
+        <video
+            id="songVideo"
+            controls
+        >
+
+            <source
+                src="song.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support video.
+
+        </video>
+
+        <button
+            class="option-back"
+            onclick="goHome()"
+        >
+            BACK
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. US PAGE
+     bg4.jpg
+===================================================== -->
+
+<section
+    id="videoPage"
+    class="option-page"
+>
+
+    <div class="option-page-box">
+
+        <h2>
+            US!!!
+        </h2>
+
+        <p>
+            Us forever!!! ❤️
+        </p>
+
+        <video
+            id="usVideo"
+            controls
+        >
+
+            <source
+                src="video.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support video.
+
+        </video>
+
+        <button
+            class="option-back"
+            onclick="goHome()"
+        >
+            BACK
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. LETTER PAGE
+     bg5.jpg
+===================================================== -->
+
+<section
+    id="letterPage"
+    class="option-page"
+>
+
+    <div class="option-page-box">
+
+        <h2>
+            A LETTER
+        </h2>
+
+        <div class="letter-paper">
+
+        <p>
+            Dear Hithu,
+        </p>
+
+        <p>
+            I Just want to say thank you for existing hithu.<br>
+            You are really special to me in all the way possible.
+        </p>
+
+        <p>
+            This is a small thing i did to show what you mean to me.<br>
+            I manifest all the great things with you in the future.
+        </p>
+
+        <p>
+            Promise "Until the poets runs out of rhyme,in other words until the end of time."
+        </p>
+
+        <p>
+            I LOVE YOU MORE THAN 3000!!!❤️
+        </p>
+
+        <p>
+            — Your Kothi ❤️
+        </p>
+
+        </div>
+
+        <button
+            class="option-back"
+            onclick="goHome()"
+        >
+            BACK
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. DAYS WE MET PAGE
+     bg6.jpg
+===================================================== -->
+
+<section
+    id="customPage"
+    class="option-page"
+>
+
+    <div class="option-page-box">
+
+        <h2>
+            SWEET MEMORIES
+        </h2>
+
+        <p>
+            Four little pieces of us, saved here just for you.
+        </p>
+
+
+        <div class="memory-grid">
+
+
+            <!-- 16th July 2025 -->
+
+            <div
+                class="memory-card"
+                onclick="showMemory('memory1')"
+            >
+
+                <img
+                    src="memory1.jpg"
+                    alt="The Zoo"
+                >
+
+                <h3>
+                    16th July 2025
+                </h3>
+
+
+            </div>
+
+
+            <!-- 22nd July 2025 -->
+
+            <div
+                class="memory-card"
+                onclick="showMemory('memory2')"
+            >
+
+                <img
+                    src="memory2.jpg"
+                    alt="Nexus"
+                >
+
+                <h3>
+                    22nd July 2025
+                </h3>
+
+            </div>
+
+
+            <!-- 25th January 2026 -->
+
+            <div
+                class="memory-card"
+                onclick="showMemory('memory3')"
+            >
+
+                <img
+                    src="memory3.jpg"
+                    alt="Church Street"
+                >
+
+                <h3>
+                    25th January 2026
+                </h3>
+            </div>
+
+
+            <!-- 7th and 10th June 2026 -->
+
+            <div
+                class="memory-card"
+                onclick="showMemory('memory4')"
+            >
+
+                <img
+                    src="memory4.jpg"
+                    alt="1 Year"
+                >
+
+                <h3>
+                    Bangalore
+                </h3>
+            </div>
+
+
+        </div>
+
+
+        <!-- MEMORY 1 -->
+
+        <div
+            id="memory1"
+            class="memory-detail"
+        >
+
+            <h3>
+                16th July 2025
+            </h3>
+
+            <p>
+                16th of July 2025, I remember this day so perfectly. This was the first time i ever held your hand and held a girls hand in my life.The day was so perfect for me that we spent little time together without any disturbance in the zoo and the fun we both had by teasing each other and the way we both were comfortableeee with each other was so great to see and i was so happy seeing you happy at that moment!!!❤️🫶
+            </p>
+
+        </div>
+
+
+        <!-- MEMORY 2 -->
+
+        <div
+            id="memory2"
+            class="memory-detail"
+        >
+
+            <h3>
+                22nd July 2025
+            </h3>
+
+            <p>
+                22nd of July 2025,the day was really special for me in so many ways. I remember i was so excited to see you even though i met you a week before and this time we were about to meet in the clg where this all started in a way. The campus and the class where we used to sit and we both were completely unknown to each other and we were about to meet there being in a relationship with you.The way you like peeked back at the exact moment i pass when you were sitting down was so cute moment and after that we went to nexus and had out time there and followed by out first kiss omg. Everything was perfect.💖💋
+            </p>
+
+        </div>
+
+
+        <!-- MEMORY 3 -->
+
+        <div
+            id="memory3"
+            class="memory-detail"
+        >
+
+            <h3>
+                25th January 2026
+            </h3>
+
+           <p>
+               25th of January 2026,It was our first date in this new year, which didn't start well. We needed that date for both of us and were going to meet after almost 4 months, and I was really happy that that date happened. You were so great with me on every date, and these little memories and those little videos we had were like something I want to see repeatedly. I would never get bored of them, and I will keep blushing every time I see them. Before this date I thought things between us were like they were going apart, and I was so scared. This date means a lot to me. 🧿💗
+            </p>
+        </div>
+
+
+        <!-- MEMORY 4 -->
+
+        <div
+            id="memory4"
+            class="memory-detail"
+        >
+
+            <h3>
+                7th and 10th June 2026
+            </h3>
+           <p>
+           7th & 10th of June 2026,This was the first time i came to Bangalore to meet you and it was so perfect and peaceful and we were about to meet during our 1 year anniversary and it made it more special spending time with you on that special day and the Bangalore was completely perfect without any disturbance and the Churchstreet date was so perfect in all the terms we explored a new place and before that i sneaked into your house was never a part of plan but manifestation is real. We were trying find places to spend time together and we were little disappointed with the situation at thst moment but everything turned completely opposite and omg everything was worth it.😩🤌💋
+           </p>
+        </div>
+
+
+        <p class="memory-note">
+            Tap any picture to open its memory ❤️
+        </p>
+
+
+        <button
+            class="option-back"
+            onclick="goHome()"
+        >
+            BACK
+        </button>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<script>
+
+/* =====================================================
+   PASSWORD
+===================================================== */
+
+const correctPassword = "2607";
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const password =
+    document.getElementById("password");
+
+const unlockButton =
+    document.getElementById("unlockButton");
+
+const error =
+    document.getElementById("error");
+
+const lockPage =
+    document.getElementById("lockPage");
+
+const transitionVideo =
+    document.getElementById("videoTransition");
+
+const mainSite =
+    document.getElementById("mainSite");
+
+
+/* =====================================================
+   UNLOCK BUTTON
+===================================================== */
+
+unlockButton.addEventListener(
+    "click",
+    unlock
+);
+
+
+/* =====================================================
+   ENTER KEY
+===================================================== */
+
+password.addEventListener(
+    "keydown",
+    function(event) {
+
+        if(event.key === "Enter") {
+
+            unlock();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   UNLOCK
+===================================================== */
+
+function unlock() {
+
+    if(password.value !== correctPassword) {
+
+        error.classList.add("show");
+
+        password.value = "";
+
+        password.focus();
+
+        return;
+    }
+
+
+    error.classList.remove("show");
+
+    unlockButton.innerText =
+        "ACCESS GRANTED";
+
+    unlockButton.disabled = true;
+
+
+    setTimeout(function() {
+
+        lockPage.classList.add("leave");
+
+        transitionVideo.classList.add("active");
+
+        transitionVideo.currentTime = 0;
+
+        transitionVideo.play().catch(function() {
+
+            showMainSite();
+
+        });
+
+    }, 500);
+
+
+    transitionVideo.onended = function() {
+
+        showMainSite();
+
+    };
+
+
+    transitionVideo.onerror = function() {
+
+        showMainSite();
+
+    };
+
+}
+
+
+/* =====================================================
+   SHOW MAIN WEBSITE
+===================================================== */
+
+function showMainSite() {
+
+    lockPage.style.display =
+        "none";
+
+    transitionVideo.pause();
+
+    transitionVideo.style.display =
+        "none";
+
+    mainSite.classList.add("show");
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* =====================================================
+   OPEN OPTION PAGE
+===================================================== */
+
+function openOption(pageId) {
+
+    stopAllVideos();
+
+
+    document.getElementById("optionsHome")
+        .style.display = "none";
+
+
+    document.querySelectorAll(".option-page")
+        .forEach(function(page) {
+
+            page.classList.remove("active");
+
+        });
+
+
+    document.getElementById(pageId)
+        .classList.add("active");
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* =====================================================
+   STOP ALL VIDEOS
+===================================================== */
+
+function stopAllVideos() {
+
+    const songVideo =
+        document.getElementById("songVideo");
+
+    const usVideo =
+        document.getElementById("usVideo");
+
+
+    if(songVideo) {
+
+        songVideo.pause();
+
+        songVideo.currentTime = 0;
+
+    }
+
+
+    if(usVideo) {
+
+        usVideo.pause();
+
+        usVideo.currentTime = 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   BACK TO OPTIONS PAGE
+===================================================== */
+
+function goHome() {
+
+    stopAllVideos();
+
+
+    document.querySelectorAll(".option-page")
+        .forEach(function(page) {
+
+            page.classList.remove("active");
+
+        });
+
+
+    document.getElementById("optionsHome")
+        .style.display = "block";
+
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* =====================================================
+   SHOW MEMORY
+===================================================== */
+
+function showMemory(memoryId) {
+
+    document.querySelectorAll(".memory-detail")
+        .forEach(function(memory) {
+
+            memory.classList.remove("active");
+
+        });
+
+
+    const selectedMemory =
+        document.getElementById(memoryId);
+
+
+    if(selectedMemory) {
+
+        selectedMemory.classList.add("active");
+
+
+        setTimeout(function() {
+
+            selectedMemory.scrollIntoView({
+
+                behavior: "smooth",
+
+                block: "center"
+
+            });
+
+        }, 50);
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
